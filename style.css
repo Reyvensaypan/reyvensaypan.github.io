@@ -1,91 +1,72 @@
 
-
- body {
-
- font-family: Arial, sans-serif; /* Sets the default font for the whole page */
-
- margin: 1; /* Removes default browser margin */
-
- background: #928383; /* Sets light gray background color */
-
- }
-
- header {
-
- background: #667583ca; /* Sets dark blue background for header */
-
- color: rgb(248, 248, 248); /* Sets header text color to white */
-
- padding: 20px; /* Adds space inside the header */
-
- text-align: center; /* Centers the header text */
-
- }
-
- nav {
-
- background: #502b38; /* Sets medium blue background for navigation bar */
-
- padding: 20px; /* Adds inner spacing for nav bar */
-
- text-align: center; /* Centers the nav links */
-
- }
-
- nav a {
-
- color: rgb(255, 252, 252); /* Sets link text color to white */
-
- margin: 0 15px; /* Adds horizontal spacing between menu items */
-
- text-decoration: none; /* Removes underline from links */
-
- font-weight: bold; /* Makes navigation text bold */
-
- }
- 
-
- .hero{
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f4f4f4;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
 }
 
+/* HEADER */
+header {
+    background: #1f2a38;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
 
- section {
+/* PROFILE PICTURE */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgb(14, 13, 13);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+}
 
- padding: 40px; /* Adds inner spacing inside sections */
+/* NAVIGATION */
+nav {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+}
 
- max-width: 1100px; /* Limits section width for better layout */
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
- margin: auto; /* Centers section in the page */
+nav button:hover {
+    color: #4ca1af;
+}
 
- background: rgb(64, 70, 71); /* Sets white background for content */
+/* SECTIONS */
+section {
+    display: none; /* hide all by default */
+    padding: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
- margin-top: 20px; /* Adds space above each section */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f2a38;
+}
 
- border-radius: 10px; /* Rounds the section corners */
-
- }
-
- h2 {
-
- color: #ebe3e3; /* Sets heading color to dark blue */
-
- }
-
- .footer {
-
- text-align: center; /* Centers footer text */
-
- padding: 20px; /* Adds padding inside footer */
-
- background: #4e4ea5; /* Sets footer background color */
-
- color: white; /* Sets footer text color */
-
- margin-top: 20px; /* Adds spacing above footer */
-
- }
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f2a38;
+    color: white;
+}

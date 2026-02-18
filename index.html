@@ -1,172 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>saypan website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saypan Website</title>
+
 <style>
 
- body {
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    display: flex;
+    min-height: 100vh;
+}
 
- font-family: Arial, sans-serif; /* Sets the default font for the whole page */
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
+    background: #1f2a38;
+    height: 100vh;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
 
- margin: 1; /* Removes default browser margin */
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
- background: #928383; /* Sets light gray background color */
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    padding-left: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
- }
+.sidebar button:hover {
+    background: #4ca1af;
+    padding-left: 40px;
+}
 
- header {
-
- background: #667583ca; /* Sets dark blue background for header */
-
- color: rgb(248, 248, 248); /* Sets header text color to white */
-
- padding: 20px; /* Adds space inside the header */
-
- text-align: center; /* Centers the header text */
-
- }
-
- nav {
-
- background: #502b38; /* Sets medium blue background for navigation bar */
-
- padding: 20px; /* Adds inner spacing for nav bar */
-
- text-align: center; /* Centers the nav links */
-
- }
-
- nav a {
-
- color: rgb(255, 252, 252); /* Sets link text color to white */
-
- margin: 0 15px; /* Adds horizontal spacing between menu items */
-
- text-decoration: none; /* Removes underline from links */
-
- font-weight: bold; /* Makes navigation text bold */
-
- }
- 
-
- .hero{
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f4f4f4;
+/* ===== MAIN CONTENT ===== */
+.main {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
- section {
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
 
- padding: 40px; /* Adds inner spacing inside sections */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #111;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease-in-out;
+}
 
- max-width: 1100px; /* Limits section width for better layout */
+/* ===== SECTIONS ===== */
+section {
+    display: none;
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
 
- margin: auto; /* Centers section in the page */
+h2 {
+    text-align: center;
+    color: #1f2a38;
+}
 
- background: rgb(64, 70, 71); /* Sets white background for content */
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: auto;
+}
 
- margin-top: 20px; /* Adds space above each section */
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 
- border-radius: 10px; /* Rounds the section corners */
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
 
- }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+    }
 
- h2 {
+    .sidebar button {
+        text-align: center;
+        padding-left: 0;
+    }
 
- color: #ebe3e3; /* Sets heading color to dark blue */
-
- }
-
- .footer {
-
- text-align: center; /* Centers footer text */
-
- padding: 20px; /* Adds padding inside footer */
-
- background: #4e4ea5; /* Sets footer background color */
-
- color: white; /* Sets footer text color */
-
- margin-top: 20px; /* Adds spacing above footer */
-
- }
+    .main {
+        margin-left: 0;
+    }
+}
 
 </style>
-
-
 </head>
+
 <body>
-    <header>
 
- <h1>REYVEN M. SAYPAN</h1>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Menu</h2>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('hobbies')">Hobbies</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('contact')">Contact</button>
+</div>
 
- <h3>Bachelor Of Industrial Technology Major in Computer and Information Technology</h3>
+<!-- MAIN CONTENT -->
+<div class="main">
 
- </header>
+<header>
+    <img src="images/saypan.jfif" alt="Reyven Saypan" class="profile-pic">
+    <h1>REYVEN M. SAYPAN</h1>
+    <h3>Bachelor of Industrial Technology<br>
+    Major in Computer and Information Technology</h3>
+</header>
 
-<nav>
-  <a href="#about">About Me</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <section id="about">
-  <h2>ABOUT ME</h2>
-  <p><strong>Name:</strong> Reyven M. Saypan</p>
-  <p><strong>Birt Date:</strong>11/09/2005</p>
-  <p><strong>Age:</strong> 20 years old</p>
-  <p><strong>Address:</strong> Phase 6, Martinez Subdivision, Block 5, Dahican City of Mati,Davao Oriental</p>
-  <p><strong>Course:</strong> Bachelor of Industrial Technology – Major in Computer and Information Technology</p>
+    <h2>About Me</h2>
+    <p><strong>Name:</strong> Reyven M. Saypan</p>
+    <p><strong>Birth Date:</strong> November 9, 2005</p>
+    <p><strong>Age:</strong> 20 years old</p>
+    <p><strong>Address:</strong> Phase 6, Martinez Subdivision, Block 5, Dahican, City of Mati, Davao Oriental</p>
+    <p><strong>Course:</strong> Bachelor of Industrial Technology – Major in Computer and Information Technology</p>
 </section>
 
-<!-- HOBBIES SECTION -->
+<!-- HOBBIES -->
 <section id="hobbies">
-  <h2>HOBBIES</h2>
-  <ul>
-    <li>Online Games</li>
-    <li>Badminton</li>
-    <li>Driving Motorcycle</li>
-    <li>Volleyball</li>
-    <li>Swimming</li>
-    <li>Hiking</li>
-  </ul>
+    <h2>Hobbies</h2>
+    <ul>
+        <li>Online Games</li>
+        <li>Badminton</li>
+        <li>Driving Motorcycle</li>
+        <li>Volleyball</li>
+        <li>Swimming</li>
+        <li>Hiking</li>
+    </ul>
 </section>
 
-<!-- SKILLS SECTION -->
+<!-- SKILLS -->
 <section id="skills">
-  <h2>SKILLS</h2>
-  <ul>
-    <li>Teamwork</li>
-    <li>Time Management</li>
-    <li>Problem-Solving</li>
-  </ul>
+    <h2>Skills</h2>
+    <ul>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+    </ul>
 </section>
- 
 
-
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section id="contact">
-  <h2>CONTACT</h2>
-  <p>
-    Email: saypanreyven2@gmail.com <br>
-    Facebook: Reyven M. Saypan <br>
-    Phone: 0953-841-2673
-  </p>
+    <h2>Contact</h2>
+    <p>
+        Email: saypanreyven2@gmail.com <br>
+        Facebook: 
+        <a href="https://www.facebook.com/reyven.m.saypan" target="_blank">
+        Reyven M. Saypan</a><br>
+        Phone: 0953-841-2673
+    </p>
 </section>
 
- <div class="footer">
+<div class="footer">
+    © 2026 BinTech - Personal Website
+</div>
 
- © 2026 BinTech - Computer and Information Technology Program
+</div>
 
- </div>
+<!-- JAVASCRIPT -->
+<script>
+function showSection(sectionId) {
+    var sections = document.querySelectorAll("section");
+
+    sections.forEach(function(section) {
+        section.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
+}
+</script>
 
 </body>
 </html>
