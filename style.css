@@ -1,72 +1,128 @@
-
+/* ===== GLOBAL ===== */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: Arial, sans-serif;
     background: linear-gradient(to right, #2c3e50, #4ca1af);
+    display: flex;
+    min-height: 100vh;
 }
 
-/* HEADER */
-header {
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
     background: #1f2a38;
+    height: 100vh;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.sidebar h2 {
     color: white;
-    padding: 40px 20px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-/* PROFILE PICTURE */
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid rgb(14, 13, 13);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    margin-bottom: 15px;
-}
-
-/* NAVIGATION */
-nav {
-    background: #111;
+.sidebar button {
+    display: block;
+    width: 100%;
     padding: 15px;
-    text-align: center;
-}
-
-nav button {
     background: none;
     border: none;
     color: white;
-    margin: 0 20px;
-    font-weight: bold;
+    text-align: left;
+    padding-left: 30px;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-nav button:hover {
-    color: #4ca1af;
+.sidebar button:hover {
+    background: #4ca1af;
+    padding-left: 40px;
 }
 
-/* SECTIONS */
+/* ===== MAIN CONTENT ===== */
+.main {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #111;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ===== SECTIONS ===== */
 section {
-    display: none; /* hide all by default */
-    padding: 40px;
-    max-width: 900px;
-    margin: 30px auto;
+    display: none;
     background: white;
+    padding: 30px;
+    margin: 20px auto;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
     color: #1f2a38;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer {
     text-align: center;
     padding: 20px;
-    background: #1f2a38;
     color: white;
+    margin-top: auto;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sidebar button {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .main {
+        margin-left: 0;
+    }
 }
